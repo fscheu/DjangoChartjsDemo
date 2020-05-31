@@ -1,7 +1,10 @@
-"""
-Definition of models.
-"""
-
 from django.db import models
 
-# Create your models here.
+
+class Meter(models.Model):
+    date = models.DateField()
+    name = models.CharField(max_length=255)
+    reading = models.IntegerField()
+
+    class Meta:
+        ordering = ("-date", "name")
